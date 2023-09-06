@@ -1,0 +1,27 @@
+{
+  "name": "employee-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahomi-idq/employee-api.git"
+  },
+  "author": "tahomi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahomi-idq/employee-api/issues"
+  },
+  "homepage": "https://github.com/tahomi-idq/employee-api#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@types/node": "^20.5.9"
+  }
+}
