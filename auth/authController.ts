@@ -18,7 +18,11 @@ export async function generateAuthToken(req: IncomingMessage):Promise<string> {
     return encodeKey(key);
 }
 
-export function verifyKey(token:string):boolean {
+export function verifyKey(token:string|undefined):boolean {
+
+    if(token === undefined) {
+        return false;
+    }
 
     let isValid = false
 

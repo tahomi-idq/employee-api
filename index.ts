@@ -1,5 +1,8 @@
 import http, { IncomingMessage } from 'http';
-import { generateAuthToken } from './auth/authController';
+import { generateAuthToken, verifyKey } from './auth/authController';
+import ApiController from './api/apiController';
+
+const apiController = new ApiController();
 
 const server = http.createServer(async (req, res)=>{
 
@@ -28,7 +31,23 @@ const server = http.createServer(async (req, res)=>{
                 message: errorMessage,
             }))
         }
-    } else {
+    } 
+    
+    else if(req.url?.includes("/api")) {
+        let authToken = req.headers.authorization;
+        
+        if(verifyKey(authToken)){
+            res = await apiController.processRequest(req, res);
+        } else {
+            res.statusCode = 401;
+            
+            res.write(JSON.stringify({
+                message: "Unauthorized",
+            }))
+        }
+    }
+    
+    else {
         res.statusCode = 404;
             
         res.write(JSON.stringify({

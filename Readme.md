@@ -1,4 +1,103 @@
-# Изначальная структура данных
+# Запуск приложения
+
+```
+npm start
+```
+
+## Endpoints:
+
+### GET /auth Аутентификация и авторизация
+
+data: 
+
+```
+{
+        "key": "key-one"
+    }
+```
+
+Для использования /api/ к запросу прикрепляется Authorizarion header со сгенерированным токеном
+
+### GET /api/employee Получение
+
+data: 
+
+```
+{
+        "name": "Abhishek"
+    }
+```
+
+### POST /api/employee Добавление
+
+data: 
+
+```
+{
+        "employee":{
+            "name": "TestName",
+            "salary": 3000,
+            "currency": "USD",
+            "department": "Engineering",
+            "sub_department": "Platform",
+            "on_contract": true
+          }
+    }
+```
+
+### DELETE /api/employee Удаление
+
+data: 
+
+```
+{
+        "name": "Anurag"
+    }
+```
+
+### PATCH /api/employee Изменение
+
+data: 
+
+```
+{
+        "employee": {
+            "name": "Himanshu",
+            "salary": 3000,
+            "currency": "USD",
+            "department": "Engineering",
+            "sub_department": "Platform",
+            "on_contract": true
+        }
+    }
+```
+
+### GET /api/contract Список сотрудников с контрактом
+
+
+### GET /api/department Список сотрудников по отделам
+
+data: 
+
+```
+{
+        "department": "Engineering"
+    }
+```
+
+### GET /api/sub-department Список сотрудников по подразделениям
+
+data: 
+
+```
+{
+        "subDepartment": "Platform"
+    }
+```
+
+# Задание:
+
+## Изначальная структура данных
 
 ```json
 [
